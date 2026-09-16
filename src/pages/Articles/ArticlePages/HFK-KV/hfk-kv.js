@@ -6,7 +6,7 @@ export default {
     subtitle: "The Roland HFK Upgrade",
     nation: "Germany",
     branch: "Weaponry",
-    hero: getArticleImage("bgt hfk-kv", "hfkMissile.jpeg"),
+    hero: getArticleImage("HFK-KV", "hfkMissile.jpeg"),
     sections: [
         {
             type: "paragraph",
@@ -26,7 +26,7 @@ export default {
         },
         {
             type: "image",
-            src: getArticleImage("bgt hfk-kv", "hfkl1LAUNCH.jpg"),
+            src: getArticleImage("HFK-KV", "hfkl1LAUNCH.jpg"),
             caption: "HFK/L1 Launch"
         },
         {
@@ -111,14 +111,14 @@ export default {
             type: "gallery",
             images: [
                 {
-                    src: getArticleImage("bgt hfk-kv", "hfk_kv_display.jpeg"),
+                    src: getArticleImage("HFK-KV", "hfk_kv_display.jpeg"),
                     caption: "Front view of the HFK missile, showcasing the seeker for terminal guidance"
                 },
                 {
-                    src: getArticleImage("bgt hfk-kv", "hfk_kv_page.jpeg")
+                    src: getArticleImage("HFK-KV", "hfk_kv_page.jpeg")
                 },
                 {
-                    src: getArticleImage("bgt hfk-kv", "hfk_kv_source.jpeg"),
+                    src: getArticleImage("HFK-KV", "hfk_kv_source.jpeg"),
                     caption: "Janes Strategic Weapons Systems January 2003"
                 }
             ]
