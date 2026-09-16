@@ -6,7 +6,7 @@ import About from "./pages/About/About";
 import TechTrees from "./pages/TechTrees/TechTrees";
 import TechTreeRenderer from "./pages/TechTrees/TechTreeRenderer";
 import Articles from "./pages/Articles/Articles";
-import Projects from "./pages/Projects/projects";
+import Projects from "./pages/Projects/Projects";
 import ArticleRenderer from "./pages/Articles/ArticleRenderer";
 import ArticleEditor from "./pages/Editors/ArticleEditor/ArticleEditor"
 import TechTreeEditor from "./pages/Editors/TechTreeEditor/TechTreeEditor"
