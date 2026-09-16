@@ -1,10 +1,12 @@
+import { getArticleImage } from "../../../../data/articleAssets";
+
 export default {
     id: "hfk-kv",
     title: "BGT HFK-KV",
     subtitle: "The Roland HFK Upgrade",
     nation: "Germany",
     branch: "Weaponry",
-    hero: "/src/pages/Articles/ArticlePages/HFK-KV/assets/hfkMissile.jpeg",
+    hero: getArticleImage("hfk-kv", "hfk_kv_display.jpeg"),
     sections: [
         {
             type: "paragraph",
