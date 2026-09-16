@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: Inter, sans-serif;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.page-content {
+    padding: 2rem;
+}
+
+.page-shell {
+    display: flex;
+    align-items: flex-start;
+    min-height: calc(80vh - 4rem);
+}
+
+.page-panel {
+    min-width: 0;
+    flex: 1;
+    padding: 2rem;
+}
+
+.page-content a:not(.sidebar a) {
+    color: #5fa8ff;
+}
+
+.page-content a:not(.sidebar a):hover {
+    color: #9ac9ff;
+}

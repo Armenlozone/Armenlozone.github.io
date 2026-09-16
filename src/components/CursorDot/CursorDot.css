@@ -1,0 +1,33 @@
+.dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background-color: #3275db;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.05s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: black;
+  z-index: 1100; /* Must be higher than the navbar's z-index */
+}
+
+.dot span {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.dot.drag-mode span {
+  opacity: 1;
+  display: block;
+}
+
+.dot.hovering {
+  width: 20px;
+  height: 20px;
+  background-color: #3275db;
+}

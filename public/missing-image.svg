@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title">
+  <title id="title">Image unavailable</title>
+  <rect width="640" height="360" fill="#182023"/>
+  <path d="M180 260l75-85 55 60 45-50 105 115H180z" fill="none" stroke="#9aa6b2" stroke-width="12"/>
+  <circle cx="390" cy="130" r="24" fill="none" stroke="#9aa6b2" stroke-width="12"/>
+  <path d="M220 90l200 180M420 90L220 270" stroke="#d56b6b" stroke-width="12"/>
+</svg>

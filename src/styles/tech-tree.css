@@ -1,0 +1,563 @@
+.tech-tree {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.tech-tree-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tech-tree-header h1 {
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.tech-tree-header p {
+    color: #cbd5e1;
+}
+
+.tech-tree-ranks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tech-tree-rank {
+    border: 1px solid #2d3b4f;
+    border-radius: 12px;
+    background: #182023;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.tech-tree-rank:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.tech-tree-rank-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #1f2d3c;
+    border-bottom: 1px solid #2d3b4f;
+    cursor: pointer;
+}
+
+.tech-tree-rank-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.tech-tree-rank-header:hover {
+    background: #26394c;
+}
+
+.tech-tree-rank-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0.35rem 0.5rem;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.tech-tree-rank-arrow {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.18s ease;
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.tech-tree-rank.open .tech-tree-rank-toggle .tech-tree-rank-arrow {
+    transform: rotate(-90deg);
+}
+
+.tech-tree-rank.collapsed .tech-tree-rank-toggle .tech-tree-rank-arrow {
+    transform: rotate(0deg);
+}
+
+.tech-tree-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    max-height: 2000px;
+    transition: max-height 260ms cubic-bezier(.2, .9, .2, 1), opacity 180ms ease, padding 200ms ease;
+    opacity: 1;
+    scrollbar-color: #3a3a3a transparent;
+    scrollbar-width: thin;
+}
+
+.tech-tree-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.tech-tree-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tech-tree-scroll::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 4px;
+}
+
+.tech-tree-scroll::-webkit-scrollbar-thumb:hover {
+    background: #3c6dff;
+}
+
+.tech-tree-rank.collapsed .tech-tree-scroll {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+}
+
+.tech-tree-rank.open .tech-tree-scroll {
+    max-height: 2000px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tech-tree-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-width: max-content;
+}
+
+.tech-tree-columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+
+.tech-tree-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 142.5px;
+    overflow-wrap: break-word;
+}
+
+.tech-tree-item {
+    width: 142.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tech-tree-node {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tech-tree-arrow {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ac9ff;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tech-tree-group {
+    width: 142.5px;
+    box-sizing: border-box;
+    border: 1px solid #2d3b4f;
+    border-radius: 8px;
+    background: #11181c;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.vehicle-group {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #344454;
+    border-radius: 8px;
+    background: #11181c;
+    overflow: hidden;
+}
+
+.vehicle-group-toggle {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0;
+    background: #202c38;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+}
+
+.vehicle-group-toggle:hover {
+    background: #2a3948;
+}
+
+.vehicle-group-arrow {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.18s ease;
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.vehicle-group-toggle.open .vehicle-group-arrow {
+    transform: rotate(-90deg);
+}
+
+.vehicle-group-toggle.collapsed .vehicle-group-arrow {
+    transform: rotate(0deg);
+}
+
+.vehicle-group-title {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.vehicle-group-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    margin-top: 0;
+    border: none;
+    border-top: 1px solid #344454;
+    border-radius: 0;
+    background: #11181c;
+    overflow: visible;
+}
+
+.tech-tree-group .tech-tree-vehicle {
+    width: 100%;
+    flex: none;
+    box-sizing: border-box;
+}
+
+.tech-tree-empty-space {
+    width: 142.5px;
+    height: 160px;
+    flex-shrink: 0;
+}
+
+.tech-tree-vehicle {
+    position: relative;
+    width: 142.5px;
+    border: 1px solid #2d3b4f;
+    border-radius: 8px;
+    background: #11181c;
+    overflow: hidden;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.tech-tree-vehicle:hover {
+    transform: translateY(-3px);
+    border-color: #5fa8ff;
+    background: #18232c;
+}
+
+.tech-tree-vehicle-image-container {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0c1114;
+    overflow: hidden;
+}
+
+.tech-tree-vehicle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.tech-tree-vehicle-info {
+    padding: 0.65rem;
+    text-align: center;
+}
+
+.tech-tree-vehicle-name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+    min-height: 2.35em;
+}
+
+.vehicle-card {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border: 1px solid #344454;
+    border-radius: 6px;
+    background: #202c38;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-2px);
+    border-color: #71859a;
+    background: #283746;
+}
+
+.vehicle-card:focus-visible {
+    outline: 2px solid #8aa8c2;
+    outline-offset: 2px;
+}
+
+.vehicle-card-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.vehicle-card-name {
+    display: block;
+    width: 100%;
+}
+
+.tech-tree-vehicle.clickable {
+    cursor: pointer;
+}
+
+.tech-tree-vehicle.clickable:focus {
+    outline: 2px solid #5fa8ff;
+    outline-offset: 2px;
+}
+
+.vehicle-details-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.vehicle-details-modal {
+    width: min(700px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid #34475c;
+    border-radius: 12px;
+    background: #182023;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+}
+
+.vehicle-details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #1f2d3c;
+    border-bottom: 1px solid #2d3b4f;
+}
+
+.vehicle-details-header h2 {
+    margin: 0;
+    color: white;
+}
+
+.vehicle-details-header button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid #34475c;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.vehicle-details-header button:hover {
+    background: #293c50;
+}
+
+.vehicle-details-image {
+    padding: 1.25rem;
+    background: #0c1114;
+    text-align: center;
+}
+
+.vehicle-details-image img {
+    display: block;
+    width: min(100%, 600px);
+    max-height: 400px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.vehicle-details-description {
+    padding: 1.25rem;
+}
+
+.vehicle-details-description p {
+    margin: 0;
+    color: #e5e7eb;
+    line-height: 1.7;
+}
+
+.vehicle-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.vehicle-modal {
+    width: min(700px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border: 1px solid #3b4b5c;
+    border-radius: 10px;
+    background: #182023;
+    color: white;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+    animation: vehicle-modal-appear 0.2s ease-out;
+}
+
+@keyframes vehicle-modal-appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.vehicle-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #1f2d3c;
+    border-bottom: 1px solid #2d3b4f;
+}
+
+.vehicle-modal-header h2 {
+    margin: 0;
+    color: white;
+}
+
+.vehicle-modal-header button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid #34475c;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.vehicle-modal-header button:hover {
+    background: #293c50;
+}
+
+.vehicle-modal-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.vehicle-modal-description h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.vehicle-modal-description p {
+    margin: 0;
+    line-height: 1.6;
+    color: #cbd5e1;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+    .vehicle-modal-backdrop {
+        padding: 1rem;
+    }
+
+    .vehicle-modal {
+        max-height: 95vh;
+    }
+
+    .vehicle-modal-image {
+        max-height: 300px;
+    }
+}
+.tree-editor-image-picker {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.tree-editor-image-picker input[type="text"] {
+    flex: 1;
+}
+
+.tree-editor-image-picker button {
+    flex-shrink: 0;
+}
