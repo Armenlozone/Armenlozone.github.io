@@ -30,7 +30,7 @@ npm run dev
 When happy:
 
 git add .
-git commit -m "Update vehicle articles"
+git commit -m "Update site"
 git push
 
 That's it.
