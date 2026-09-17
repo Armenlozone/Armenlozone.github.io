@@ -301,6 +301,12 @@
     overflow: hidden;
 }
 
+.tech-tree-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .tech-tree-vehicle-image {
     width: 100%;
     height: 100%;

@@ -23,7 +23,7 @@ export default function Sidebar({ sidebarData }) {
                     className="collapse-btn"
                     onClick={() => setSidebarPinned(prev => !prev)}
                 >
-                    🖈
+                    ☰
                 </button>
 
                 {sidebarExpanded && (

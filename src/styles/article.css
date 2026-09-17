@@ -141,6 +141,8 @@
 
 .article-gallery-slide img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     max-height: 520px;
     object-fit: contain;
     border-radius: 10px;
@@ -211,6 +213,8 @@
 .article-video-carousel-slide iframe,
 .article-video-carousel-slide video {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     max-height: 520px;
     border: 0;
     border-radius: 10px;
@@ -222,4 +226,15 @@
     margin-top: 0.6rem;
     color: #cbd5e1;
     font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    display: block;
+  }
+
+  .page-panel {
+    width: 100%;
+    padding: 16px;
+  }
 }
