@@ -230,11 +230,13 @@
 
 @media (max-width: 768px) {
   .page-shell {
+    width: 100%;
     display: block;
   }
 
   .page-panel {
     width: 100%;
+    max-width: 100%;
     padding: 16px;
   }
 }

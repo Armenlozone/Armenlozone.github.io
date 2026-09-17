@@ -1,104 +1,264 @@
+/* =========================
+   Navbar
+========================= */
+
 .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
+  width: 100%;
+  min-height: 130px;
 
-    height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    background: #171717;
-    color: white;
+  gap: 1rem;
+  padding: 1rem 2rem;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background: #171717;
+  color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-sizing: border-box;
 }
 
-.navbar-title a{
 
-    font-size:2rem;
+/* =========================
+   Title
+========================= */
 
-    font-weight:700;
+.navbar-title {
+  width: 100%;
 
-    text-decoration:none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    color:white;
+  text-align: center;
 
+  box-sizing: border-box;
 }
+
+.navbar-title a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.navbar-subtitle {
+  margin: 0.4rem 0 0;
+
+  color: #888;
+
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   Desktop Navigation
+========================= */
 
 .navbar-links {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 3rem;
+
+  width: 100%;
+
+  box-sizing: border-box;
 }
 
-.navbar-links a,
-.dropdown-btn {
-    color: white;
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 1rem;
+
+  padding: 10px 0;
+
+  white-space: nowrap;
 }
 
 .navbar-links a.active {
-    color: #5fa8ff;
+  color: #5fa8ff;
 }
 
+.navbar-links a:hover {
+  color: #5fa8ff;
+}
+
+
+/* =========================
+   Mobile Menu Button
+========================= */
+
+.mobile-menu-button {
+  display: none;
+
+  border: none;
+  background: transparent;
+
+  color: white;
+
+  font-size: 30px;
+
+  padding: 8px 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   Dropdown
+========================= */
+
 .dropdown {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
+  position: absolute;
 
-    min-width: 180px;
+  top: 100%;
+  left: 0;
 
-    background: #222;
-    border-radius: 10px;
+  min-width: 180px;
 
-    display: flex;
-    flex-direction: column;
+  background: #222;
 
-    overflow: hidden;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  z-index: 1100;
 }
 
 .dropdown-menu a {
-    padding: 12px;
+  padding: 12px;
 }
 
 .dropdown-menu a:hover {
-    background: #333;
-}
-.navbar{
-
-    min-height:130px;
-
+  background: #333;
 }
 
-.navbar-title{
 
-    display:flex;
+/* =========================
+   Mobile
+========================= */
 
-    flex-direction:column;
+@media (max-width: 700px) {
 
-    align-items:center;
+  .navbar {
+    min-height: 0;
 
-}
+    padding: 0.75rem 1rem;
 
-.navbar-subtitle{
+    gap: 0.5rem;
 
-    margin-top:.4rem;
+    position: sticky;
+    top: 0;
+  }
 
-    color:#888;
 
-    font-size:.9rem;
+  /* Title */
 
-    letter-spacing:2px;
+  .navbar-title {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .navbar-title a {
+    font-size: 2rem;
+  }
+
+  .navbar-subtitle {
+    max-width: 100%;
+
+    font-size: 0.9rem;
+    line-height: 1.4;
+
+    letter-spacing: 2px;
+
+    margin-top: 0.4rem;
+  }
+
+
+  /* Hamburger */
+
+  .mobile-menu-button {
+    display: block;
+
+    width: auto;
+
+    margin: 0 auto;
+  }
+
+
+  /* Navigation hidden by default */
+
+  .navbar-links {
+    display: none;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 0;
+
+    padding: 0;
+  }
+
+
+  /* Navigation opened */
+
+  .navbar-links.mobile-open {
+    display: flex;
+  }
+
+
+  /* Mobile links */
+
+  .navbar-links a {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px 10px;
+
+    text-align: center;
+
+    white-space: normal;
+
+    box-sizing: border-box;
+  }
+
+
+  /* Mobile dropdown */
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+
+    width: 100%;
+    min-width: 0;
+
+    border-radius: 0;
+  }
 
 }
